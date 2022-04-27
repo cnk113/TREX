@@ -1,3 +1,15 @@
+# Reproducing some results from the paper
+
+Dataset: brain1_str (aka 10X_41)
+
+This is described at <https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4644060>
+
+Reads are in SRX8627776, see <https://www.ncbi.nlm.nih.gov/sra?term=SRX8627776>.
+
+Two runs:
+- SRR12103475
+- SRR12103476
+
 - Get Cell Ranger
 
 original analysis was done with Cell Ranger 2.2.0
