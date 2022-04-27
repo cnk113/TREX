@@ -15,7 +15,7 @@ Two runs:
 original analysis was done with Cell Ranger 2.2.0
 
 Current is Cell Ranger 6.1.2
-
+curl -O https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-mm10-2020-A.tar.gz
 Mouse reference dataset
 
 10X_41 a.k.a. brain1_str: <https://www.ncbi.nlm.nih.gov/sra?term=SRX8627776>
@@ -52,4 +52,4 @@ Run `cellranger count`
     cellranger count --transcriptome=mm10_H2B-EGFP-30N --id=brain1_str --fastqs=fastq/ --sample=SRR12103475 --sample=SRR12103476 --expect-cells=2299
 
 
-    /sw/apps/bioinfo/Chromium-cellranger/2.2.0/rackham/cellranger-cs/2.2.0/bin/count --id=10x_41_LV516_P11_striatum_transcriptome_NovaSeq_expect-cells-2299 --transcriptome=/proj/uppstore2018019/private/references/mm10_H2B-EGFP-30N/mm10_H2B-EGFP-30N --fastqs=/proj/uppstore2018019/private/raw/P11703/P11703_1003/02-FASTQ/181025_A00187_0084_AH3J5JDRXX --sample=P11703_1003 --expect-cells=2299
+     --fastqs=/proj/uppstore2018019/private/raw/P11703/P11703_1003/02-FASTQ/181025_A00187_0084_AH3J5JDRXX --sample=P11703_1003 --expect-cells=2299
