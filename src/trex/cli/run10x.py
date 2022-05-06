@@ -387,7 +387,7 @@ def filter_visium(
 def filter_cells(
     cells: Iterable[Cell],
     molecules: Iterable[Molecule],
-    keep_single_reads: bool = False,
+    keep_single_reads: bool = True,
 ) -> List[Cell]:
     """
     Filter cloneIDs according to two criteria:
@@ -411,15 +411,6 @@ def filter_cells(
     new_cells = []
     for cell in cells:
         counts = cell.counts.copy()
-        for clone_id, count in cell.counts.items():
-            if count > 1:
-                # This cloneID occurs more than once in this cell - keep it
-                continue
-            if overall_counts[clone_id] > 1:
-                # This cloneID occurs also in other cells - remove it
-                del counts[clone_id]
-            elif clone_id in single_read_clone_ids and not keep_single_reads:
-                del counts[clone_id]
         if counts:
             new_cells.append(Cell(cell_id=cell.cell_id, counts=counts))
     return new_cells
