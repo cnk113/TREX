@@ -14,7 +14,7 @@ class CellRangerError(Exception):
 class CellRangerDir2:
     """CellRanger 2 "outs/" directory structure"""
 
-    MATRICES = "raw_feature_bc_matrix"
+    MATRICES = "filtered_gene_bc_matrices"
     BARCODES = "barcodes.tsv"
     BAM = "possorted_genome_bam.bam"
 
@@ -76,7 +76,7 @@ class CellRangerDir3(CellRangerDir2):
 def make_cellranger(path: Path, *args, **kwargs):
     """Detect CellRanger outs/ format and return an appropriate instance of CellRangerDir2/3"""
     path = Path(path)
-    if (path / "outs" / "raw_feature_bc_matrix").exists():
+    if (path / "outs" / "filtered_gene_bc_matrices").exists():
         return CellRangerDir2(path, *args, **kwargs)
     else:
         return CellRangerDir3(path, *args, **kwargs)
